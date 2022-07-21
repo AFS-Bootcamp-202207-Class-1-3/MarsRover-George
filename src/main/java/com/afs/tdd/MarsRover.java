@@ -39,6 +39,10 @@ public class MarsRover {
     public void executeCommand(String command) {
         if ("M".equals(command)) {
             move();
+        } else if ("L".equals(command)) {
+            switch (this.getDirection()){
+                case "N": this.setDirection("W");
+            }
         }
     }
 
