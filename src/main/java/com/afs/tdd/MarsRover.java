@@ -37,6 +37,14 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
+        if ("M".equals(command)) {
+            move();
+        }
+    }
 
+    private void move() {
+        if("N".equals(this.direction)) {
+            this.locationY++;
+        }
     }
 }
