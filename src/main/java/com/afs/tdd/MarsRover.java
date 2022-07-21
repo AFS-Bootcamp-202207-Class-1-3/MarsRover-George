@@ -43,6 +43,10 @@ public class MarsRover {
             switch (this.getDirection()){
                 case "N": this.setDirection("W");
             }
+        } else if ("R".equals(command)) {
+            switch (this.getDirection()) {
+                case "N": this.setDirection("E");
+            }
         }
     }
 
