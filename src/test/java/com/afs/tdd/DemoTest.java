@@ -8,89 +8,64 @@ class DemoTest {
     @Test
     void should_return_0_1_N_when_execute_command_given_0_0_N_and_M() {
         //given
-        int locationX = 0;
-        int locationY = 0;
-        String direction = "N";
+        Location location = new Location(0, 0, "N");
         String command = "M";
-
-        int expectedLocationX = 0;
-        int expectedLocationY = 1;
-        String expectedDirection = "N";
+        Location expectedLocation = new Location(0, 1, "N");
 
         //when
-        MarsRover marsRover = new MarsRover(locationX, locationY, direction);
+        MarsRover marsRover = new MarsRover(location);
         marsRover.executeCommand(command);
 
         //then
-        assertEquals(expectedLocationX, marsRover.getLocationX());
-        assertEquals(expectedLocationY, marsRover.getLocationY());
-        assertEquals(expectedDirection, marsRover.getDirection());
+        assertEquals(expectedLocation, marsRover.getLocation());
+
     }
 
     @Test
     void should_return_0_0_W_when_execute_command_given_0_0_N_and_L() {
         //given
-        int locationX = 0;
-        int locationY = 0;
-        String direction = "N";
+        Location location = new Location(0, 0, "N");
         String command = "L";
+        Location expectedLocation = new Location(0, 0, "W");
 
-        int expectedLocationX = 0;
-        int expectedLocationY = 0;
-        String expectedDirection = "W";
 
         //when
-        MarsRover marsRover = new MarsRover(locationX, locationY, direction);
+        MarsRover marsRover = new MarsRover(location);
         marsRover.executeCommand(command);
 
         //then
-        assertEquals(expectedLocationX, marsRover.getLocationX());
-        assertEquals(expectedLocationY, marsRover.getLocationY());
-        assertEquals(expectedDirection, marsRover.getDirection());
+        assertEquals(expectedLocation, marsRover.getLocation());
     }
 
     @Test
     void should_return_0_0_E_when_execute_command_given_0_0_N_and_R() {
         //given
-        int locationX = 0;
-        int locationY = 0;
-        String direction = "N";
+        Location location = new Location(0, 0, "N");
         String command = "R";
-
-        int expectedLocationX = 0;
-        int expectedLocationY = 0;
-        String expectedDirection = "E";
+        Location expectedLocation = new Location(0, 0, "E");
 
         //when
-        MarsRover marsRover = new MarsRover(locationX, locationY, direction);
+        MarsRover marsRover = new MarsRover(location);
         marsRover.executeCommand(command);
 
         //then
-        assertEquals(expectedLocationX, marsRover.getLocationX());
-        assertEquals(expectedLocationY, marsRover.getLocationY());
-        assertEquals(expectedDirection, marsRover.getDirection());
+        assertEquals(expectedLocation, marsRover.getLocation());
     }
 
     @Test
     void should_return_0_minus_1_S_when_execute_command_given_0_0_S_and_M() {
         //given
-        int locationX = 0;
-        int locationY = 0;
-        String direction = "S";
+        Location location = new Location(0,0,"S");
         String command = "M";
+        Location expectedLocation = new Location(0,-1,"S");
 
-        int expectedLocationX = 0;
-        int expectedLocationY = -1;
-        String expectedDirection = "S";
 
         //when
-        MarsRover marsRover = new MarsRover(locationX, locationY, direction);
+        MarsRover marsRover = new MarsRover(location);
         marsRover.executeCommand(command);
 
         //then
-        assertEquals(expectedLocationX, marsRover.getLocationX());
-        assertEquals(expectedLocationY, marsRover.getLocationY());
-        assertEquals(expectedDirection, marsRover.getDirection());
+        assertEquals(expectedLocation, marsRover.getLocation());
     }
 
 

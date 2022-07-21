@@ -4,10 +4,7 @@ import java.util.*;
 
 public class MarsRover {
 
-    private int locationX;
-    private int locationY;
-    private String direction;
-
+    private Location location;
     private static final Map<String, Command> commandTypeActionMap = new HashMap<>();
 
     static {
@@ -16,34 +13,16 @@ public class MarsRover {
         commandTypeActionMap.put("R", new TurnRightCommand());
     }
 
-    public MarsRover(int locationX, int locationY, String direction) {
-        this.locationX = locationX;
-        this.locationY = locationY;
-        this.direction = direction;
+    public MarsRover(Location location) {
+        this.location = location;
     }
 
-    public int getLocationX() {
-        return locationX;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setLocationX(int locationX) {
-        this.locationX = locationX;
-    }
-
-    public int getLocationY() {
-        return locationY;
-    }
-
-    public void setLocationY(int locationY) {
-        this.locationY = locationY;
-    }
-
-    public String getDirection() {
-        return direction;
-    }
-
-    public void setDirection(String direction) {
-        this.direction = direction;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public void executeCommand(String command) {
