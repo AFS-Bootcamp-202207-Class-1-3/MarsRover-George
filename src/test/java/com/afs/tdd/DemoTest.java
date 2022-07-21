@@ -170,4 +170,19 @@ class DemoTest {
         //then
         assertEquals(expectedLocation, marsRover.getLocation());
     }
+
+    @Test
+    void should_return_0_0_N_when_execute_command_given_0_0_W_and_R() {
+        //given
+        Location location = new Location(0,0,"W");
+        String command = "R";
+        Location expectedLocation = new Location(0,0,"N");
+
+        //when
+        MarsRover marsRover = new MarsRover(location);
+        marsRover.executeCommand(command);
+
+        //then
+        assertEquals(expectedLocation, marsRover.getLocation());
+    }
 }
