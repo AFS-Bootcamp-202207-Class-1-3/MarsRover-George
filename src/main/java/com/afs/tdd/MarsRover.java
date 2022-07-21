@@ -26,7 +26,9 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        commandTypeActionMap.get(command).doCommand(this);
+        for (char instruction : command.toCharArray()) {
+            commandTypeActionMap.get(String.valueOf(instruction)).doCommand(this);
+        }
     }
 
 }
