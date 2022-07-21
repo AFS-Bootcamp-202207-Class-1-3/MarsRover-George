@@ -8,12 +8,12 @@ public class MarsRover {
     private int locationY;
     private String direction;
 
-    private static Map<String,CommandAction> commandTypeActionMap = new HashMap<>();
+    private static final Map<String, Command> commandTypeActionMap = new HashMap<>();
 
     static {
         commandTypeActionMap.put("M", new MoveCommand());
-        commandTypeActionMap.put("L", new LeftDirectionCommand());
-        commandTypeActionMap.put("R", new RightDirectionCommand());
+        commandTypeActionMap.put("L", new TurnLeftCommand());
+        commandTypeActionMap.put("R", new TurnRightCommand());
     }
 
     public MarsRover(int locationX, int locationY, String direction) {

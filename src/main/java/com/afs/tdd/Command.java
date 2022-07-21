@@ -1,5 +1,5 @@
 package com.afs.tdd;
 
-public interface CommandAction {
+public interface Command {
     void doCommand(MarsRover marsRover);
 }
