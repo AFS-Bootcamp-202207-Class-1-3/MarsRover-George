@@ -1,14 +1,20 @@
 package com.afs.tdd;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class MarsRover {
 
     private int locationX;
     private int locationY;
     private String direction;
+
+    private static Map<String,CommandAction> commandTypeActionMap = new HashMap<>();
+
+    static {
+        commandTypeActionMap.put("M", new MoveCommand());
+        commandTypeActionMap.put("L", new LeftDirectionCommand());
+        commandTypeActionMap.put("R", new RightDirectionCommand());
+    }
 
     public MarsRover(int locationX, int locationY, String direction) {
         this.locationX = locationX;
@@ -41,24 +47,7 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if ("M".equals(command)) {
-            move();
-        } else if ("L".equals(command)) {
-            switch (this.getDirection()){
-                case "N": this.setDirection("W");
-            }
-        } else if ("R".equals(command)) {
-            switch (this.getDirection()) {
-                case "N": this.setDirection("E");
-            }
-        }
+        commandTypeActionMap.get(command).doCommand(this);
     }
 
-    private void move() {
-        if("N".equals(this.direction)) {
-            this.locationY++;
-        } else if ("S".equals(this.direction)) {
-            this.locationY--;
-        }
-    }
 }
