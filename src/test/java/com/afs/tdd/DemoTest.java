@@ -116,7 +116,7 @@ class DemoTest {
         //given
         Location location = new Location(0,0,"E");
         String command = "L";
-        Location expectedLocation = new Location(1,0,"N");
+        Location expectedLocation = new Location(0,0,"N");
 
         //when
         MarsRover marsRover = new MarsRover(location);

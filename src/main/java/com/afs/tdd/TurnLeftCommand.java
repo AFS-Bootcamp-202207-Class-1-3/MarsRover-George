@@ -7,6 +7,8 @@ public class TurnLeftCommand implements Command {
             marsRover.getLocation().setDirection("W");
         } else if ("S".equals(marsRover.getLocation().getDirection())) {
             marsRover.getLocation().setDirection("E");
+        } else if ("E".equals(marsRover.getLocation().getDirection())) {
+            marsRover.getLocation().setDirection("N");
         }
     }
 }
